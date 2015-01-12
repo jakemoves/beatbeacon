@@ -14,6 +14,8 @@
 		0E3EDCB71A641369004EAA96 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E3EDCB61A641369004EAA96 /* Images.xcassets */; };
 		0E3EDCBA1A641369004EAA96 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E3EDCB81A641369004EAA96 /* LaunchScreen.xib */; };
 		0E3EDCC61A641369004EAA96 /* beacontestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E3EDCC51A641369004EAA96 /* beacontestTests.m */; };
+		0E3EDCD01A6413E4004EAA96 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E3EDCCF1A6413E4004EAA96 /* CoreBluetooth.framework */; };
+		0E3EDCD21A6413EC004EAA96 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E3EDCD11A6413EC004EAA96 /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +42,8 @@
 		0E3EDCBF1A641369004EAA96 /* beacontestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = beacontestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E3EDCC41A641369004EAA96 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0E3EDCC51A641369004EAA96 /* beacontestTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = beacontestTests.m; sourceTree = "<group>"; };
+		0E3EDCCF1A6413E4004EAA96 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
+		0E3EDCD11A6413EC004EAA96 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +51,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E3EDCD21A6413EC004EAA96 /* CoreLocation.framework in Frameworks */,
+				0E3EDCD01A6413E4004EAA96 /* CoreBluetooth.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +69,8 @@
 		0E3EDC9D1A641369004EAA96 = {
 			isa = PBXGroup;
 			children = (
+				0E3EDCD11A6413EC004EAA96 /* CoreLocation.framework */,
+				0E3EDCCF1A6413E4004EAA96 /* CoreBluetooth.framework */,
 				0E3EDCA81A641369004EAA96 /* beacontest */,
 				0E3EDCC21A641369004EAA96 /* beacontestTests */,
 				0E3EDCA71A641369004EAA96 /* Products */,
@@ -168,6 +176,11 @@
 				TargetAttributes = {
 					0E3EDCA51A641369004EAA96 = {
 						CreatedOnToolsVersion = 6.1;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 					0E3EDCBE1A641369004EAA96 = {
 						CreatedOnToolsVersion = 6.1;
@@ -297,7 +310,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -333,7 +346,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -346,6 +359,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = beacontest/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -356,6 +370,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = beacontest/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
