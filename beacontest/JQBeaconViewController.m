@@ -1,18 +1,18 @@
 //
-//  ViewController.m
+//  JQBeaconViewController.m
 //  beacontest
 //
-//  Created by Jacob Niedzwiecki on 2015-01-12.
+//  Created by Jacob Niedzwiecki on 2015-01-19.
 //  Copyright (c) 2015 Jacob Niedzwiecki. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "JQBeaconViewController.h"
 
-@interface ViewController ()
+@interface JQBeaconViewController ()
 
 @end
 
-@implementation ViewController
+@implementation JQBeaconViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -79,7 +79,7 @@
     _locationManager.delegate = self;
     
     [_locationManager startMonitoringForRegion:_rangingBeaconRegion];
-
+    
 }
 
 - (void)locationManager:(CLLocationManager *)manager didStartMonitoringForRegion:(CLRegion *)region {
@@ -127,12 +127,12 @@
             _currentDistance = [self getDistanceFromRSSI:_currentRSSI withPowerFunction:YES];
             [self updateDistanceLabel];
             
-//            NSLog(@"Ranging beacons in target region:");
-//            NSLog(@"    proximity: %d", beacon.proximity);
-//            NSLog(@"    RSSI:      %ld", (long)beacon.rssi);
-//            NSLog(@"    accuracy:  %f", beacon.accuracy);
-//            NSLog(@"    major:     %@", beacon.major);
-//            NSLog(@"    minor:     %@", beacon.minor);
+            //            NSLog(@"Ranging beacons in target region:");
+            //            NSLog(@"    proximity: %d", beacon.proximity);
+            //            NSLog(@"    RSSI:      %ld", (long)beacon.rssi);
+            //            NSLog(@"    accuracy:  %f", beacon.accuracy);
+            //            NSLog(@"    major:     %@", beacon.major);
+            //            NSLog(@"    minor:     %@", beacon.minor);
         }
     }
 }
@@ -149,9 +149,9 @@
     } else {
         // using polynomial function
         distance =  (-0.0049 * pow(rssi, 3))
-                  + (0.2878 * pow(rssi, 2))
-                  - (5.8073 * rssi)
-                  - 32.705;
+        + (0.2878 * pow(rssi, 2))
+        - (5.8073 * rssi)
+        - 32.705;
     }
     
     return distance;
